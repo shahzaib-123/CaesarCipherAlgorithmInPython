@@ -1,21 +1,23 @@
+#function to encrypt a string
 def encrypt(text,key):
     result = ""
     for i in range(len(text)):
         char = text[i]
         if (char.isupper()):
-            result += chr((ord(char) + key-65) % 26 + 65)
+            result += chr((ord(char) + key-65) % 26 + 65) #for upper case letters
         else:
-            result += chr((ord(char) + key - 97) % 26 + 97)
+            result += chr((ord(char) + key - 97) % 26 + 97) #for lowercase letters
     return result
 
+#function to decrypt a text
 def decrypt(text,key):
     result = ""
     for i in range(len(text)):
         char = text[i]
-        if (char.isupper()):
-            result += chr((ord(char) - key-65) % 26 + 65)
+        if (char.isupper()): 
+            result += chr((ord(char) - key-65) % 26 + 65) #for upper case letters
         else:
-            result += chr((ord(char) - key - 97) % 26 + 97)
+            result += chr((ord(char) - key - 97) % 26 + 97)#for lowercase letters
     return result
 
 if __name__=="__main__":
